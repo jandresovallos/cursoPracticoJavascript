@@ -53,3 +53,4 @@ console.log("El perímetro de la circunferencia es: " + perimetroCircunferencia 
 // Área
 const areaCircunferencia = Math.pow(radioCirculo,2) * PI;
 console.log("El área de la circunferencia es: " + areaCircunferencia + "cm^2");
+console.groupEnd();
