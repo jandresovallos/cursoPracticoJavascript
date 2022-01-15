@@ -27,3 +27,40 @@ function onClickButtonPriceDiscount(){
     const resultP = document.getElementById("ResultP");
     resultP.innerText = "El precio con descuento es de: " + precioConDescuento;
 }
+
+// FUNCIONES INTELIGENTES
+
+// Array de cupones
+
+const cupones = ["upss","holaMundo","soyBatman"];
+const cupon = document.getElementById("digiteCupon");
+
+function onClickDescuentoCupon(){
+    const valorCupon = cupon.value;
+    const inputPrecio = document.getElementById("ingresePrecio");
+    const precio = inputPrecio.value;
+    const resultado = document.getElementById("resultado");
+    let descuento = 0;
+    switch(valorCupon){
+        case cupones[0]:
+            descuento = 10;
+            resultado.innerText = calcularPrecioConDescuento(precio,descuento);
+            break;
+        case cupones[1]:
+            descuento = 20;
+            resultado.innerText = calcularPrecioConDescuento(precio,descuento);
+            break;
+        case cupones[2]:
+            descuento = 30;
+            resultado.innerText = calcularPrecioConDescuento(precio,descuento);
+            break;
+        default:
+            resultado.innerText = "No es un cupon válido";
+            break;        
+    }
+}
+
+function onClickCleanLabel(){
+    cupon.innerText = "";
+    // precio.innerText = "";
+}
