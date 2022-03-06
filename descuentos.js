@@ -34,13 +34,16 @@ function onClickButtonPriceDiscount(){
 
 const cupones = ["upss","holaMundo","soyBatman"];
 const cupon = document.getElementById("digiteCupon");
+const inputPrecio = document.getElementById("ingresePrecio");
 
 function onClickDescuentoCupon(){
     const valorCupon = cupon.value;
-    const inputPrecio = document.getElementById("ingresePrecio");
     const precio = inputPrecio.value;
     const resultado = document.getElementById("resultado");
     let descuento = 0;
+    if (!cupones.includes(valorCupon)){
+        alert("Cupón no válido");
+    }
     switch(valorCupon){
         case cupones[0]:
             descuento = 10;
@@ -61,6 +64,6 @@ function onClickDescuentoCupon(){
 }
 
 function onClickCleanLabel(){
-    cupon.innerText = "";
-    // precio.innerText = "";
+    cupon.value = "";
+    inputPrecio.value = "";
 }
